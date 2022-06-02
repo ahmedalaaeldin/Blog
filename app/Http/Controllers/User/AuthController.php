@@ -58,7 +58,7 @@ class AuthController extends Controller
         $user = User::where('email',$email)->get();
         if ($user->isEmpty()) {
             // user doesn't exist
-             return redirect()->back()->with('error', "your email is wrong");  
+             return redirect('/login')->with('error', "your email is wrong");  
            
         }else{
             $name = null ;$password = null ;
@@ -71,12 +71,12 @@ class AuthController extends Controller
     
                 return  redirect('/');
             }else{
-                    return redirect()->back()->with('error', "your password is wrong");  
+                    return redirect('/login')->with('error', "your password is wrong");  
             }
            
         }
         
-       return redirect()->back()->with('error', "please sure from your email or username");
+      
     }
   
     public function register_get(Request $request)
@@ -106,12 +106,12 @@ class AuthController extends Controller
                 'name' => $name,
                 'password' =>  Hash::make($password)
             ));
-            return redirect()->back()->with("success","user registerd successfully.");
+            return redirect('/register')->with("success","user registerd successfully.");
             // return view('registeration');
         } catch (\Illuminate\Database\QueryException $exception) {
             // You can check get the details of the error using `errorInfo`:
              $errorInfo = $exception->errorInfo;
-             return redirect()->back()->with('error', $errorInfo[2]);  
+             return redirect('/register')->with('error', $errorInfo[2]);  
              //print_r($errorInfo);
             // Return the response to the client..
         }

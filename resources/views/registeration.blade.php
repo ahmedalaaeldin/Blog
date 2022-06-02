@@ -37,7 +37,7 @@
 
                               <div class="col-md-6">
 
-                                  <input type="text" id="name" class="form-control" name="name"  autofocus>
+                                  <input type="text" id="name" class="form-control" name="name"   value="{{ old('name') }}" autofocus>
 
                                   @if ($errors->has('name'))
 
@@ -57,7 +57,7 @@
 
                               <div class="col-md-6">
 
-                                  <input type="text" id="email_address" class="form-control" name="email"  autofocus>
+                                  <input type="email" id="email_address" class="form-control" name="email"  value="{{ old('email') }}"  autofocus>
 
                                   @if ($errors->has('email'))
 

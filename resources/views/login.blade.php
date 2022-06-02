@@ -34,7 +34,7 @@
 
                               <div class="col-md-6">
 
-                                  <input type="text" id="email_address" class="form-control" name="email"  autofocus>
+                                  <input type="email" id="email_address" class="form-control" name="email"  value="{{ old('email') }}"  autofocus>
 
                                   @if ($errors->has('email'))
 
@@ -54,7 +54,7 @@
 
                               <div class="col-md-6">
 
-                                  <input type="password" id="password" class="form-control" name="password" >
+                                  <input type="password" id="password" class="form-control" name="password"  >
 
                                   @if ($errors->has('password'))
 

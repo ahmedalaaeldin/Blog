@@ -9,7 +9,7 @@
     
   <table class="table table-bordered">
     <thead>
-      <tr>
+      <tr style="background-color:white">
         <th>name</th>
         <th>details</th>
         <th>actions</th>
@@ -17,7 +17,7 @@
     </thead>
     <tbody>
       @foreach ($posts as $post)  
-      <tr>
+      <tr style="background-color:white">
         <td>{{$post->name}}</td>
         <td>{{$post->details}}</td>
         <td><a href="{{ route('user.edit-post.GET',$post->id) }}" class="link-success">Edit Post</a></td>
